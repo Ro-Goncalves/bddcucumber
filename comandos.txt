@@ -47,4 +47,11 @@ docker-compose down
 
 http://localhost:8081
 
- 
+https://dev.to/loboweissmann/entenda-as-configuracoes-do-spring-boot-10c5
+
+
+Iniciar a aplicação.
+Usar --spring.profiles.active=test na inicialização
+O banco de dados está em /h2-console
+Deve usar jdbc:h2:mem:leiloes em JDBC URL 
+Para popular o banco http://localhost:8080/db/seed
