@@ -127,6 +127,8 @@ public class Leilao {
 	}
 
 	public boolean propoe(Lance lanceAtual) {
+
+		if(!eMaiorIqualZero(lanceAtual)){return false;}
 		
 		if (this.estaSemLances() || ehUmLanceValido(lanceAtual)) {
 			adicionarLance(lanceAtual);
@@ -144,6 +146,10 @@ public class Leilao {
 		return valorEhMaior(lance, ultimoLanceDado()) && 
 				oUltimoUsuarioNaoEhOMesmoDo(lance) && 
 				totalDeLancesDoUsuarioEhMenorIgual5(lance.getUsuario());
+	}
+
+	private boolean eMaiorIqualZero(Lance lance){
+		return lance.getValor().compareTo(BigDecimal.ZERO) > 0;
 	}
 
 	private boolean valorEhMaior(Lance lance, Lance ultimoLanceDado) {
